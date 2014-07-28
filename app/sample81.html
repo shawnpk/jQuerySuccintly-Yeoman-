@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Scrolling the Browser Window</title>
+
+        <style>
+            li {
+                padding-bottom: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a href="#" class="next">Next1</a></li>
+            <li><a href="#" class="next">Next2</a></li>
+            <li><a href="#" class="prev">Previous1</a></li>
+            <li><a href="#" class="next">Next3</a></li>
+            <li><a href="#" class="prev">Previous2</a></li>
+            <li><a href="#" class="prev">Previous3</a></li>
+        </ul>
+
+        <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+
+        <script>
+            $( document ).ready( function() {
+                $( '.next ').on( 'click', function() {
+                    $( 'html, body' ).animate({
+                        scrollTop: $( this ).parent().next().find( 'a' ).offset().top
+                    }, 1000 );
+                });
+
+                $( '.prev ').on( 'click', function() {
+                    $( 'html, body' ).animate({
+                        scrollTop: $( this ).parent().prev().find( 'a' ).offset().top
+                    }, 1000 );
+                });
+            });
+        </script>
+    </body>
+</html>
