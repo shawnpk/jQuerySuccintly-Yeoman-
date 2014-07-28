@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+           
+        </style>
+    </head>
+    <body>
+        <a>jQuery</a>
+        
+        <script src="_libs/jquery-2.1.1.js"></script>
+        <script>
+            // PASS JQUERY A FUNCTION
+            $( document ).ready( function() {
+                // IS THERE AN ELEMENT IN THE SET?
+                if ( $( 'a' ).get( 0 ) ) {
+                    $( 'a' ).attr( 'href', 'http://www.jquery.com' );
+                }
+                
+                // CHECK THE LENGTH OF THE SET.
+                // CAN ALSO USE .SIZE()
+                if ( $( 'a' ).length ) {
+                    $( 'a' ).attr( 'title', 'jQuery' );
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            #list {
+                background: grey;
+            }
+            .last {
+                background: red;
+            }
+            .veryLast {
+                background: lightblue;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="list">
+            <li></li>
+            <li>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </li>
+            <li></li>
+            <li></li>
+        </ul>
+        
+        <script src="_libs/jquery-2.1.1.js"></script>
+        <script>
+            $( document ).ready( function() {
+                $( '#list' ) // ORIGINAL MATCHED ELEMENT
+                    .find( '> li' ) // DESTRUCTIVE METHOD
+                        .filter( ':last' )  // DESTRUCTIVE METHOD
+                            .addClass( 'veryLast' ) 
+                        .end() // END .FILTER( ':LAST' ) **RETURNS TO 'ORIGINAL MATCHED ELEMENT**
+                        .find( 'ul' ) // DESTRUCTIVE METHOD
+                            .css( 'background', 'lightgrey' ) 
+                            .find( 'li:last' ) // DESTRUCTIVE METHOD
+                                .addClass( 'last' )
+                            .end() // END .FIND( 'LI:LAST' ) **RETURNS TO 'ORIGINAL MATCHED ELEMENT**
+                        .end() // END .FIND( 'UL' ) **RETURNS TO 'ORIGINAL MATCHED ELEMENT**
+                    .end() // END .FIND( '> LI' ) **RETURNS TO 'ORIGINAL MATCHED ELEMENT**
+                    .find( 'li' )
+                        .append( 'I am an &lt;li&gt;' );
+            });
+        </script>
+    </body>
+</html>

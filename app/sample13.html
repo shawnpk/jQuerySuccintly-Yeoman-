@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+           
+        </style>
+    </head>
+    <body>
+        <a href="http://www.jquery.com" title="anchor1">jQuery.com</a>
+        <a href="http://www.jquery.com" title="anchor2">jQuery.com</a>
+        <a href="http://www.jquery.com" title="anchor3">jQuery.com</a>
+        
+        <script src="_libs/jquery-2.1.1.js"></script>
+        <script>
+            // PASS JQUERY A FUNCTION
+            $( document ).ready( function() {
+                // CREATE NATIVE ARRAY FROM WRAPPER SET
+                var arrayOfAnchors = $( 'a' ).get();
+                
+                // ALERTS THE THIRD LINK
+                alert( arrayOfAnchors [ 2 ].title );
+            });
+        </script>
+    </body>
+</html>

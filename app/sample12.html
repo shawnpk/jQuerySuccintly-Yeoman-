@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+           
+        </style>
+    </head>
+    <body>
+        <a>jQuery.com</a>
+        
+        <script src="_libs/jquery-2.1.1.js"></script>
+        <script>
+            // PASS JQUERY A FUNCTION
+            $( document ).ready( function() {
+                // USING DOM NODE PROPERTIES
+                // TO SET THE TITLE ATTRIBUTE
+                $( 'a' ).get( 0 ).title = 'jQuery.com';
+                
+                // MANIPULATION OF DOM ELEMENT
+                // USING JQUERY METHODS
+                $( 'a' ).attr( { href: 'http://www.jquery.com', target: '_blank' } );
+            });
+        </script>
+    </body>
+</html>

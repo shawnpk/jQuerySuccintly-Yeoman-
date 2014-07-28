@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+           
+        </style>
+    </head>
+    <body>
+        <a id="link1">jQuery.com</a><br>
+        <a id="link2">jQuery.com</a><br>
+        <a id="link3">jQuery.com</a><br>
+        
+        <script src="_libs/jquery-2.1.1.js"></script>
+        <script>
+            $( document ).ready( function() {
+                $( 'a' ).each( function() {
+                    alert( $( this ).attr( 'id' ) );   
+                });
+            });
+        </script>
+    </body>
+</html>

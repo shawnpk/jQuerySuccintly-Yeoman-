@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            .link {
+                background: lightblue;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <script src="_libs/jquery-2.1.1.js"></script>
+        <script>
+            // PASS JQUERY A FUNCTION
+            $( function() { 
+                // PASS JQUERY A STRING OF HTML
+                $( '<p></p>' ).appendTo( 'body' );
+                
+                // PASS JQUERY AN ELEMENT REFERENCE
+                $( document.createElement ( 'a' ) ).text( 'jQuery' ).appendTo( 'p' );
+                
+                // PASS JQUERY A CSS EXPRESSION
+                $( 'a:first' ).attr( { href: 'http://www.jquery.com', target: '_blank' } );
+                
+                // PASS JQUERY A DOM REFERENCE
+                $( document.anchors[ 0 ] ).attr( 'jQuery' );
+            });
+        </script>
+    </body>
+</html>
